@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>John Gilcreast</title>
+    {% load staticfiles %}
+    <link rel='stylesheet' type='text/css' href='{% static "mySite\css\style.css" %}'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Rubik" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elem = document.querySelector('.carousel');
+        var instance = M.Carousel.init(elem, {
+          fullWidth: true
+        });
+        var projects = M.Carousel.getInstance(elem);
+        document.getElementById('navright').addEventListener("click", function(){
+          projects.next();
+        });
+        document.getElementById('navleft').addEventListener("click", function(){
+          projects.prev();
+        });
+        M.AutoInit();
+      });
+    </script>
+
+  </head>
+  <body>
+    <div id='hero'>
+      <div class='parallax-container'>
+        <div class="parallax"><img src='{% static "mySite\img\hero.JPG" %}' alt='Welcome pic'></div>
+      </div>
+      <div id='herotitle' class='valign-wrapper'>
+        <h2>John Gilcreast</h2>
+      </div>
+    </div>
+
+    <div id='about'>
+      <div class='container'>
+        <h4>A Bit About Me</h4>
+        <p class='flow-text'>
+          A lifelong computer geek turned programmer, I've always loved working
+          with computers inside and out. I've built my own machines and now I want
+          to make a career out of working with code.
+        </p>
+        </div>
+    </div>
+
+    <div id='tech'>
+      <div class='container'>
+        <h4>Stuff I Know</h4>
+        <span class='flow-text'>I have two years of Computer Science experience alongside a three month
+        on-site web development coding bootcamp (Coding Dojo)</span>
+        <table>
+          <tr>
+            <th>Concepts</th>
+            <td>Full-stack web development, Responsive Design, Front-end frameworks (Angular), Version control (Git)</td>
+          </tr>
+          <tr>
+            <th>Languages</th>
+            <td>HTML, CSS, Javascript, Ruby, Python, C++, some SQL, limited experience with Assembly</td>
+          </tr>
+          <tr>
+            <th>Tech I've used</th>
+            <td>Ruby on Rails, Python stack (Django and Flask), M.E.A.N. using Angular4, JQuery, CSS Frameworks</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div id='projects'>
+      <h4>Some Things I've done</h4>
+      <div id='projectlist' class="carousel carousel-slider center no-autoinit">
+        <div class='carousel-fixed-item'>
+          <i id='navleft' class='large material-icons'>chevron_left</i>
+          <i id='navright'class='large material-icons'>chevron_right</i>
+        </div>
+        <div class="carousel-item" href="#review">
+          <div class='card'>
+            <img class='materializefix'>
+            <!-- When using the fullwidth carousel option with slides that contains images,
+             the carousel collapses to the height of the image whenever the window is resized.
+             Materialize's stylesheet initializes the carousel to a size larger than the image,
+             so I'm assuming this is a bug. The above img tag is to stop this.-->
+            <div class="card-image waves-effect waves-block waves-dark">
+              <img class='activator' src="{% static 'mySite\img\ReviewSite.png' %}">
+            </div>
+            <div class='card-content'>
+              <h4>ReviewSite</h4>
+            </div>
+            <div class='card-reveal flow-text'>
+              <span class='card-title'>ReviewSite<i class="material-icons right">close</i></span>
+              <p>
+                A website where people can read, comment on, and create reviews
+                for anything they want. I initially wanted to make this as a
+                place where I could write what I thought about movies, games,
+                or music but any topic is welcome.
+              </p>
+              <a href='http://github.com/JGilcreast/review_site'>Github</a><br>
+              <a href='http://18.221.81.171/'>Visit this website</a><br>
+              Supports basic CRUD operations as well as client-side validation,
+              pagination, and responsive design.<br>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" href="#pets">
+          <div class='card'>
+            <img class='materializefix'>
+            <div class="card-image waves-effect waves-block waves-dark">
+              <img class='activator' src="{% static 'mySite\img\WCPS.png' %}">
+            </div>
+            <div class='card-content'>
+              <h4>WCPS Mockup</h4>
+            </div>
+            <div class='card-reveal flow-text'>
+              <span class='card-title'>Wabasha County Pet Shelter Mockup<i class="material-icons right">close</i></span>
+              <p>
+                A mockup website design made for a relative. An online listing
+                of all pets available for adoption (or already adopted) in the shelter.
+                Also enables users to submit pets for adoption.
+              </p>
+              <a href='http://github.com/JGilcreast/pet_shelter'>Github</a><br>
+              <a href='http://18.222.155.31/'>Visit this website</a><br>
+                Supports basic CRUD operations as well as client-side validation,
+                pagination, and responsive design.
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" href="#portfolio">
+          <div class='card'>
+            <img class='materializefix'>
+            <div class="card-image waves-effect waves-block waves-dark">
+              <img class='activator' src="{% static 'mySite\img\port.jpg' %}">
+            </div>
+            <div class='card-content'>
+              <h4>This Portfolio</h4>
+            </div>
+            <div class='card-reveal flow-text'>
+              <span class='card-title'>This Portfolio<i class="material-icons right">close</i></span>
+              <p>
+                My personal website using Materialize.
+              </p>
+              <a href='http://github.com/JGilcreast/portfolio'>Github</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id='contact'>
+      <div class='container'>
+        <div class="row">
+          <div class='col s12 l4 pic'>
+            <img class="z-depth-5" src='{% static "mySite\img\contact2.JPG" %}' alt='A picture of me'>
+          </div>
+          <div id='contactinfo' class='col s12 l8 flow-text'>
+            <span><a href='http://Github.com/JGilcreast'>Github/JGilcreast</a><br>
+            Johngilcreast@gmail.com</span>
+          <div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  </body>
+</html>

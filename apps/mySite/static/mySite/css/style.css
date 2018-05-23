@@ -1,0 +1,101 @@
+body{
+  min-width: 450px;
+
+  /* CSS reset */
+	vertical-align: baseline;
+	font-weight: inherit;
+	font-family: inherit;
+	font-style: inherit;
+	font-size: 16px;
+	border: 0 none;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto Mono', monospace;
+  text-align: center;
+}
+p, div {
+	font-family: 'Rubik', sans-serif;
+	font-size: 1em;
+  text-align: justify;
+}
+#hero{
+  min-height: 100vh;
+}
+#herotitle{
+  background-color: #A1B5D8;
+  height: 20vh;
+  box-sizing: border-box;
+}
+#herotitle h2{
+  margin: 0 auto;
+}
+.parallax-container{
+  height: 80vh !important;
+}
+#about{
+  background-color: #FFFCF7;
+  overflow: hidden;
+}
+#tech{
+  background-color: #e8e8e8;
+  overflow: hidden;
+}
+#projects{
+  background-color: #A1B5D8;
+  padding-top: 17.5px;
+}
+#projects h4{
+  margin: 0 auto 17.5px;
+}
+#navleft{
+  float: left;
+  cursor: pointer;
+}
+#navright{
+  float:right;
+  cursor: pointer;
+}
+.materializefix{
+  display: none;
+}
+.carousel-item{
+  background-image: url(../img/mirrored_squares.png);
+}
+.card{
+  max-width: 600px;
+  margin: 0 auto !important;
+  height: 100%;
+}
+#contact{
+  background-color: #e8e8e8;
+  text-align: center;
+  padding: 20px;
+  clear: both;
+}
+#contact .pic{
+  text-align: center;
+}
+#contact img{
+  width: 225px;
+  height: auto;
+  border-radius: 30%;
+  margin: 0 auto;
+}
+#contactinfo{
+  display: table;
+  text-align: center;
+  margin-top: 20px;
+}
+#contactinfo span{
+  display: table-cell;
+  vertical-align: middle;
+}
+@media(min-width:993px){
+  #contactinfo{
+    height: 245px;
+    margin-top: inherit;
+  }
+}
